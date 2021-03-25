@@ -4,7 +4,7 @@ from kafka import KafkaProducer
 
 
 topic_name = 'input'
-bootstrap_servers = 'localhost:9092'
+bootstrap_servers = '0.0.0.0:9092'
 producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
 
 # generate messages
@@ -15,5 +15,5 @@ while True:
     encoded_msg = msg.encode('utf-8')
     producer.send(topic_name, encoded_msg)
 
-    # print(f'Sending msg: {msg}')
-    sleep(60)
+    print(f'Sending msg: {msg}')
+    sleep(10)
