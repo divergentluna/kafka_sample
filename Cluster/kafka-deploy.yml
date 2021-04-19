@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-deployment
+  labels:
+    app: kafka-app
+spec:
+  template:
+    metadata:
+      name: kafka-pod
+      labels:
+        app: kafka-app
+    spec:
+      containers:
+        - name: kafka-zookeper
+          image: johnnypark/kafka-zookeeper:latest
+          ports:
+            - name: kafka-zookeper
+              containerPort: 9092
+              protocol: TCP
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kafka-app

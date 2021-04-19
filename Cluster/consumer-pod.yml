@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: consumer-pod
+  labels:
+    app: consumer-app
+spec:
+  nodeName: kube-node2
+  containers:
+    - name: consumer
+      image: divergentluna/kafka_consumer:latest
+      ports:
+        - name: consumer
+          containerPort: 9092
+          protocol: TCP

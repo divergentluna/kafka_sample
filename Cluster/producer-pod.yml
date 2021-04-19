@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: producer-pod
+  labels:
+    app: producer-app
+spec:
+  nodeName: kube-node1
+  containers:
+    - name: producer
+      image: divergentluna/kafka_producer:latest
+      ports:
+        - name: producer
+          containerPort: 9092
+          protocol: TCP

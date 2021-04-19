@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kafka-pod
+  labels:
+    app: kafka-app
+spec:
+  containers:
+    - name: kafka-zookeper
+      image: johnnypark/kafka-zookeeper:latest
+      ports:
+        - name: kafka-zookeper
+          containerPort: 9092
+          protocol: TCP
