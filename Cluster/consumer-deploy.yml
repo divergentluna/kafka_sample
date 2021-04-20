@@ -20,7 +20,7 @@ spec:
               containerPort: 9092
               protocol: TCP
           # Just spin & wait forever
-          command: [ "/bin/bash", "-c", "--" ]
+          command: [ "/bin/sh", "-c", "--" ]
           args: [ "while true; do sleep 30; done;" ]
   replicas: 2
   selector:
