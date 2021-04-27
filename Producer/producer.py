@@ -15,5 +15,5 @@ while True:
     encoded_msg = msg.encode('utf-8')
     producer.send(topic_name, encoded_msg)
 
-    # print(f'Sending msg: {msg}')
+    print(f'Sending msg: {msg}')
     sleep(30)

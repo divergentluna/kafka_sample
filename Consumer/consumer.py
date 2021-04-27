@@ -15,7 +15,7 @@ producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
 for msg in consumer:
     time_value = msg.value.decode('utf-8')
     rfc_3339_format = str(datetime.utcfromtimestamp(float(time_value) / 1000))
-    # print(f"timestamp:{rfc_3339_format}")
+    print(f"timestamp:{rfc_3339_format}")
 
     producer.bootstrap_connected()
     rfc_3339_encoded = rfc_3339_format.encode('utf-8')
