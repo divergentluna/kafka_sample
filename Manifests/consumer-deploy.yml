@@ -11,7 +11,7 @@ spec:
       labels:
         app: consumer-app
     spec:
-      nodeName: kube-node2
+      nodeName: k8s-worker02
       containers:
         - name: consumer
           image: divergentluna/kafka_consumer:latest

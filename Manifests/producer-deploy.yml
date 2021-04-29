@@ -11,7 +11,7 @@ spec:
       labels:
         app: producer-app
     spec:
-      nodeName: kube-node1
+      nodeName: k8s-worker01
       containers:
         - name: producer
           image: divergentluna/kafka_producer:latest
